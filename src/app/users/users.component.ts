@@ -10,4 +10,10 @@ import { DUMMY_USERS } from '../dummy-users';
 })
 export class UsersComponent {
   selectedUsers = DUMMY_USERS[0];
+
+  get imagePath() {
+    return "'assets/users/' + selectedUsers.avatar'";
+  }
+
+  onClickEvent() {}
 }
