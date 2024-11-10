@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { DUMMY_USERS } from '../dummy-users';
 
 @Component({
   selector: 'app-users',
