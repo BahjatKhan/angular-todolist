@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { UsersComponent } from './users/users.component';
+import { DUMMY_USERS } from './dummy-users';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,5 @@ import { UsersComponent } from './users/users.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'max-project';
+  users = DUMMY_USERS;
 }
