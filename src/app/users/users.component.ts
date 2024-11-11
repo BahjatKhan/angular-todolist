@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, output, Output } from '@angular/core';
 
 @Component({
   selector: 'app-users',
@@ -8,12 +8,17 @@ import { Component, Input } from '@angular/core';
   styleUrl: './users.component.css',
 })
 export class UsersComponent {
+  @Input({ required: true }) id!: string;
   @Input({ required: true }) avatar!: string;
   @Input({ required: true }) name!: string;
+
+  clickOnUserCard = output<string>();
 
   get imagePath() {
     return 'assets/users/' + this.avatar;
   }
 
-  onClickEvent() {}
+  onClickEvent() {
+    this.clickOnUserCard.emit('Hellow ' + this.name);
+  }
 }
