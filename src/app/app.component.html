@@ -1,24 +1,11 @@
 <app-header />
 <main>
   <ul id="users">
+    @for(user of users; track user.id){
     <li>
-      <app-users [user]="users[0]" (clickOnUserCard)="onSelectUser($event)" />
+      <app-users [user]="user" (clickOnUserCard)="onSelectUser($event)" />
     </li>
-    <li>
-      <app-users [user]="users[1]" (clickOnUserCard)="onSelectUser($event)" />
-    </li>
-    <li>
-      <app-users [user]="users[2]" (clickOnUserCard)="onSelectUser($event)" />
-    </li>
-    <li>
-      <app-users [user]="users[3]" (clickOnUserCard)="onSelectUser($event)" />
-    </li>
-    <li>
-      <app-users [user]="users[4]" (clickOnUserCard)="onSelectUser($event)" />
-    </li>
-    <li>
-      <app-users [user]="users[5]" (clickOnUserCard)="onSelectUser($event)" />
-    </li>
+    }
   </ul>
   <app-tasks [name]="selectedUserName.name" />
 </main>
