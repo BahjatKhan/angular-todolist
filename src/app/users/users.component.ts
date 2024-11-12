@@ -8,17 +8,19 @@ import { Component, EventEmitter, Input, output, Output } from '@angular/core';
   styleUrl: './users.component.css',
 })
 export class UsersComponent {
-  @Input({ required: true }) id!: string;
-  @Input({ required: true }) avatar!: string;
-  @Input({ required: true }) name!: string;
+  @Input({ required: true }) user!: {
+    id: string;
+    name: string;
+    avatar: string;
+  };
 
   clickOnUserCard = output<string>();
 
   get imagePath() {
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.user.avatar;
   }
 
   onClickEvent() {
-    this.clickOnUserCard.emit(this.id);
+    this.clickOnUserCard.emit(this.user.id);
   }
 }
