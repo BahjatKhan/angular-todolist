@@ -1,5 +1,11 @@
 import { Component, EventEmitter, Input, output, Output } from '@angular/core';
 
+interface User {
+  id: string;
+  name: string;
+  avatar: string;
+}
+
 @Component({
   selector: 'app-users',
   standalone: true,
@@ -8,11 +14,7 @@ import { Component, EventEmitter, Input, output, Output } from '@angular/core';
   styleUrl: './users.component.css',
 })
 export class UsersComponent {
-  @Input({ required: true }) user!: {
-    id: string;
-    name: string;
-    avatar: string;
-  };
+  @Input({ required: true }) user!: User;
 
   clickOnUserCard = output<string>();
 
