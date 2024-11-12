@@ -19,6 +19,6 @@ export class UsersComponent {
   }
 
   onClickEvent() {
-    this.clickOnUserCard.emit('Hellow ' + this.name);
+    this.clickOnUserCard.emit(this.id);
   }
 }
